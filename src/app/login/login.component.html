@@ -1,0 +1,25 @@
+<div *ngIf="invalidFilling">Please fill all the fields</div>
+<div *ngIf="invalidPassword">Password can contain letters and numbers only</div>
+<div *ngIf="invalidUsername">Username can contain letters and numbers only</div>
+
+<form method="post" #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <label for="username">Username:</label>
+  <input
+    type="text"
+    id="username"
+    name="username"
+    required
+    autofocus
+    [(ngModel)]="username"
+  />
+  <label for="password">Password:</label>
+  <input
+    type="text"
+    id="password"
+    name="password"
+    required
+    autofocus
+    [(ngModel)]="password"
+  />
+  <button type="submit">Login</button>
+</form>

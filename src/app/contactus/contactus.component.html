@@ -1,0 +1,41 @@
+<div *ngIf="nameErr.errors?.['required']">
+  <strong>Warning:</strong> "Name:" is required.
+</div>
+<div *ngIf="emailErr.errors?.['required']">
+  <strong>Warning:</strong> "Email:" is required.
+</div>
+<div *ngIf="msgErr.errors?.['required']">
+  <strong>Warning:</strong> "Message:" is required.
+</div>
+<form method="post" #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <label for="name">name:</label>
+  <input
+    type="text"
+    id="name"
+    name="name"
+    required
+    autofocus
+    [(ngModel)]="name"
+    #nameErr="ngModel"
+  />
+  <label for="email">email:</label>
+  <input
+    type="email"
+    id="email"
+    name="email"
+    required
+    autofocus
+    [(ngModel)]="email"
+    #emailErr="ngModel"
+  />
+  <label for="password">message:</label>
+  <textarea
+    id="message"
+    name="message"
+    required
+    autofocus
+    [(ngModel)]="message"
+    #msgErr="ngModel"
+  ></textarea>
+  <button type="submit">Submit</button>
+</form>
