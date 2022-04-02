@@ -7,9 +7,9 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./contactus.component.css'],
 })
 export class ContactusComponent implements OnInit {
-  message: String = '';
-  name: String = '';
-  email: String = '';
+  message: String = 'Thank You!';
+  name: String = 'John Doe';
+  email: String = 'john.doe@email.com';
 
   constructor() {}
 
